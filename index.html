@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NGL</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      height: 100vh;
+      background: linear-gradient(160deg, #ff4f8b, #ff914d);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.5s;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .message-box {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .question {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      resize: none;
+      font-size: 16px;
+    }
+
+    .send-button, .footer-button {
+      margin-top: 20px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .footer-button {
+      margin-bottom: 30px;
+    }
+
+    .fake-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: black;
+      color: white;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="message-box">
+      <div class="question">ส่งข้อความไม่ระบุตัวตนมาถึงฉัน.</div>
+      <textarea rows="4" placeholder="ส่งข้อความแบบไม่ระบุตัวตน..."></textarea>
+      <button class="send-button" onclick="prankUser()">ส่ง!</button>
+    </div>
+  </div>
+
+  <div style="text-align: center; font-size: 14px; margin-bottom: 10px;">
+    👇 209 คนเพิ่งแตะปุ่ม 👇
+  </div>
+  <div class="container">
+    <button class="footer-button">รับข้อความของคุณเอง!</button>
+  </div>
+
+  <div class="fake-overlay" id="prankScreen">
+    โดนกูหลอกไปดิ555 ลิงก์นี้มีไวรัส ทักมาเดี๋ยวลบให้
+  </div>
+
+  <script>
+    function prankUser() {
+      const overlay = document.getElementById("prankScreen");
+      overlay.style.display = "flex";
+    }
+  </script>
+</body>
+</html>
